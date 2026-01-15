@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=3 uid="uid://dpnqpmq88yeow"]
+
+[ext_resource type="ArrayMesh" uid="uid://dn41ntnhb7t5u" path="res://Balloon Popper/Balloon.obj" id="1_4t30t"]
+[ext_resource type="Material" uid="uid://ccxkx3ckwecpb" path="res://Balloon Popper/balloon_red.tres" id="1_bxkad"]
+[ext_resource type="Script" uid="uid://cw6mhgnfx1gw5" path="res://Balloon Popper/balloon.gd" id="3_6jol5"]
+
+[sub_resource type="Environment" id="Environment_4t30t"]
+background_mode = 1
+background_color = Color(0.70394075, 0.9292994, 0.9599672, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hm4d0"]
+
+[node name="Balloon_Popper_Root" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05241251, 1.6748555, 5.634879)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.6189366, 0.27317587, -0.73640513, 0.47089767, 0.6213246, 0.6262676, 0.6286278, -0.7343914, 0.25592265, 0, 0, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_4t30t")
+
+[node name="Balloons" type="Node3D" parent="."]
+
+[node name="RedBalloon2" type="MeshInstance3D" parent="Balloons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 0)
+material_override = ExtResource("1_bxkad")
+mesh = ExtResource("1_4t30t")
+skeleton = NodePath("../RedBalloon/Model")
+
+[node name="RedBalloon3" type="MeshInstance3D" parent="Balloons"]
+material_override = ExtResource("1_bxkad")
+mesh = ExtResource("1_4t30t")
+skeleton = NodePath("../..")
+
+[node name="RedBalloon4" type="MeshInstance3D" parent="Balloons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0)
+material_override = ExtResource("1_bxkad")
+mesh = ExtResource("1_4t30t")
+skeleton = NodePath("../RedBalloon5")
+
+[node name="RedBalloon5" type="MeshInstance3D" parent="Balloons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+material_override = ExtResource("1_bxkad")
+mesh = ExtResource("1_4t30t")
+skeleton = NodePath("")
+
+[node name="RedBalloon" type="Area3D" parent="Balloons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+script = ExtResource("3_6jol5")
+
+[node name="Model" type="MeshInstance3D" parent="Balloons/RedBalloon"]
+material_override = ExtResource("1_bxkad")
+mesh = ExtResource("1_4t30t")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Balloons/RedBalloon"]
+transform = Transform3D(1, 0, 0, 0, 0.6, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_hm4d0")
+
+[connection signal="input_event" from="Balloons/RedBalloon" to="Balloons/RedBalloon" method="_on_input_event"]
