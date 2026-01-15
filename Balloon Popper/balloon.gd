@@ -5,4 +5,17 @@ extends Area3D
 @export var score_to_give : int = 1
 
 func _on_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
-	pass
+	if event is not InputEventMouseButton:
+		return
+	
+	if event.button_index != MOUSE_BUTTON_LEFT:
+		return
+		
+	if not event.pressed:
+		return
+	
+	scale += Vector3.ONE * size_increase
+	clicks_to_pop -= 1
+	
+	if clicks_to_pop == 0:
+		queue_free()
