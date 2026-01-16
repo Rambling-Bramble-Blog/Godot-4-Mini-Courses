@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dpnqpmq88yeow"]
+[gd_scene load_steps=5 format=3 uid="uid://dpnqpmq88yeow"]
 
 [ext_resource type="Script" uid="uid://b73u0jagtibb2" path="res://Balloon Popper/balloon_manager.gd" id="1_hm4d0"]
 [ext_resource type="PackedScene" uid="uid://ywycv7nc6va8" path="res://Balloon Popper/red_balloon.tscn" id="2_bxkad"]
@@ -7,11 +7,17 @@
 background_mode = 1
 background_color = Color(0.70394075, 0.9292994, 0.9599672, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_bxkad"]
+font_size = 20
+font_color = Color(0.33269098, 0, 0.10067018, 1)
+
 [node name="Balloon_Popper_Root" type="Node3D"]
 script = ExtResource("1_hm4d0")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9475875, -0.32514453, 8.634879)
+projection = 2
+near = 0.559
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.6189366, 0.27317587, -0.73640513, 0.47089767, 0.6213246, 0.6262676, 0.6286278, -0.7343914, 0.25592265, 0, 0, 0)
@@ -62,3 +68,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 5)
 
 [node name="RedBalloon14" parent="Balloons" instance=ExtResource("2_bxkad")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -2, 5)
+
+[node name="ScoreText" type="Label" parent="."]
+offset_left = 40.0
+offset_right = 116.0
+offset_bottom = 28.0
+scale = Vector2(4.8665514, 3.097891)
+text = "Score: 0"
+label_settings = SubResource("LabelSettings_bxkad")
