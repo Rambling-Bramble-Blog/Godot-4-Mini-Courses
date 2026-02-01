@@ -8,7 +8,103 @@
 [node name="Player" parent="." instance=ExtResource("1_kow1d")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3.5, 3.5)
+position = Vector2(-1, 0)
+zoom = Vector2(3, 3)
 
-[node name="Crate" parent="." instance=ExtResource("2_h1ex6")]
-position = Vector2(-37, -6)
+[node name="Crates" type="Node2D" parent="."]
+
+[node name="Crate" parent="Crates" instance=ExtResource("2_h1ex6")]
+position = Vector2(-65, 91)
+
+[node name="Crate2" parent="Crates" instance=ExtResource("2_h1ex6")]
+position = Vector2(26, 22)
+
+[node name="Crate3" parent="Crates" instance=ExtResource("2_h1ex6")]
+position = Vector2(136, -66)
+
+[node name="Crate4" parent="Crates" instance=ExtResource("2_h1ex6")]
+position = Vector2(-24, -76)
+
+[node name="Crate5" parent="Crates" instance=ExtResource("2_h1ex6")]
+position = Vector2(-94, -20)
+
+[node name="Crate6" parent="Crates" instance=ExtResource("2_h1ex6")]
+position = Vector2(-113, 31)
+
+[node name="Crate7" parent="Crates" instance=ExtResource("2_h1ex6")]
+position = Vector2(-153, -7)
+
+[node name="Crate8" parent="Crates" instance=ExtResource("2_h1ex6")]
+position = Vector2(-71, -57)
+
+[node name="Crate9" parent="Crates" instance=ExtResource("2_h1ex6")]
+position = Vector2(122, 77)
+
+[node name="Crate10" parent="Crates" instance=ExtResource("2_h1ex6")]
+position = Vector2(73, 31)
+
+[node name="Crate11" parent="Crates" instance=ExtResource("2_h1ex6")]
+position = Vector2(142, 0)
+
+[node name="Crate12" parent="Crates" instance=ExtResource("2_h1ex6")]
+position = Vector2(-142, 81)
+
+[node name="Crate13" parent="Crates" instance=ExtResource("2_h1ex6")]
+position = Vector2(-126, -54)
+
+[node name="Crate14" parent="Crates" instance=ExtResource("2_h1ex6")]
+position = Vector2(-38, 67)
+
+[node name="Crate15" parent="Crates" instance=ExtResource("2_h1ex6")]
+position = Vector2(-162, -88)
+
+[node name="Crate16" parent="Crates" instance=ExtResource("2_h1ex6")]
+position = Vector2(73, 68)
+
+[node name="Crate17" parent="Crates" instance=ExtResource("2_h1ex6")]
+position = Vector2(126, 23)
+
+[node name="Crate18" parent="Crates" instance=ExtResource("2_h1ex6")]
+position = Vector2(-168, 50)
+
+[node name="Crate19" parent="Crates" instance=ExtResource("2_h1ex6")]
+position = Vector2(43, -78)
+
+[node name="Crate20" parent="Crates" instance=ExtResource("2_h1ex6")]
+position = Vector2(167, -51)
+
+[node name="Crate21" parent="Crates" instance=ExtResource("2_h1ex6")]
+position = Vector2(158, 63)
+
+[node name="Crate22" parent="Crates" instance=ExtResource("2_h1ex6")]
+position = Vector2(58, -40)
+
+[node name="Crate23" parent="Crates" instance=ExtResource("2_h1ex6")]
+position = Vector2(84, -72)
+
+[node name="Crate24" parent="Crates" instance=ExtResource("2_h1ex6")]
+position = Vector2(26, -23)
+
+[node name="Crate25" parent="Crates" instance=ExtResource("2_h1ex6")]
+position = Vector2(19, 71)
+
+[node name="Crate26" parent="Crates" instance=ExtResource("2_h1ex6")]
+position = Vector2(-22, -31)
+
+[node name="Crate27" parent="Crates" instance=ExtResource("2_h1ex6")]
+position = Vector2(-5, 38)
+
+[node name="Crate28" parent="Crates" instance=ExtResource("2_h1ex6")]
+position = Vector2(-52, 6)
+
+[node name="Crate29" parent="Crates" instance=ExtResource("2_h1ex6")]
+position = Vector2(98, -13)
+
+[node name="Crate30" parent="Crates" instance=ExtResource("2_h1ex6")]
+position = Vector2(6, -62)
+
+[node name="Crate31" parent="Crates" instance=ExtResource("2_h1ex6")]
+position = Vector2(-70, 41)
+
+[node name="Crate32" parent="Crates" instance=ExtResource("2_h1ex6")]
+position = Vector2(-99, 78)
