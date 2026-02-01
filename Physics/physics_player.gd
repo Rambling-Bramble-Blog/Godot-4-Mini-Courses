@@ -12,9 +12,9 @@ func _process(delta: float) -> void:
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		# get mouse position
 		var mouse_pos = get_global_mouse_position() # returns Vector2 of the mouse
-		
-		# get mouse direction
-		var mouse_direction = get_local_mouse_position() # returns a Vector2 of the relative mouse direction. may not be right.
-		
+
+		# get mouse direction		
+		var dir = global_position.direction_to(mouse_pos)
+
 		# apply force
-	
+		apply_impulse(dir * hit_force)
