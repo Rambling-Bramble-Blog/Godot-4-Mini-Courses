@@ -15,6 +15,9 @@ func _process(delta: float) -> void:
 
 		# get mouse direction		
 		var dir = global_position.direction_to(mouse_pos)
+		
+		if get_global_position() == get_global_mouse_position():
+			print("hit")
 
 		# apply force
 		apply_impulse(dir * hit_force)

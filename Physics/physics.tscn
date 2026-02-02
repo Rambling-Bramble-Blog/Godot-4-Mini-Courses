@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7osjn3n0yru"]
+[gd_scene load_steps=5 format=3 uid="uid://c7osjn3n0yru"]
 
 [ext_resource type="PackedScene" uid="uid://evb70rd5uvnx" path="res://Physics/physics_player.tscn" id="1_kow1d"]
 [ext_resource type="PackedScene" uid="uid://sxvfbul0mp2k" path="res://Physics/crate.tscn" id="2_h1ex6"]
+[ext_resource type="Texture2D" uid="uid://bpsesxaef2u2p" path="res://Physics/MouseIcon.png" id="3_h1ex6"]
+[ext_resource type="Script" uid="uid://du64c5ydgl8pg" path="res://Physics/mouse_touch.gd" id="3_p3c4k"]
 
 [node name="Physics_Root" type="Node2D"]
 
@@ -108,3 +110,16 @@ position = Vector2(-70, 41)
 
 [node name="Crate32" parent="Crates" instance=ExtResource("2_h1ex6")]
 position = Vector2(-99, 78)
+
+[node name="Mouse_Spec" type="RigidBody2D" parent="."]
+position = Vector2(-34, -10)
+gravity_scale = 0.0
+script = ExtResource("3_p3c4k")
+
+[node name="MouseIcon" type="Sprite2D" parent="Mouse_Spec"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_h1ex6")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Mouse_Spec"]
+rotation = 0.08508882
+polygon = PackedVector2Array(-5, 0, 0, -6, 5, -1, 0, 6)
